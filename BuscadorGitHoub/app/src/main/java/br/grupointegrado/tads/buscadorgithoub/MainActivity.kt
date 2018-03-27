@@ -5,19 +5,23 @@ import android.net.Network
 import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import org.json.JSONObject
 import java.lang.Exception
 import java.net.URL
+import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        exercicioJson()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -48,7 +52,55 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    fun exibirResultado(){
+        tv_github_resultado.visibility = View.VISIBLE
+        tv_mensagem_erro.visibility = View.INVISIBLE
+        pb_aguarde.visibility = View.INVISIBLE
+    }
+
+
+    fun exibirMensagemErro(){
+        tv_github_resultado.visibility = View.INVISIBLE
+        tv_mensagem_erro.visibility = View.VISIBLE
+        pb_aguarde.visibility = View.INVISIBLE
+    }
+
+    fun  exibirProgessBar(){
+        tv_github_resultado.visibility = View.INVISIBLE
+        tv_mensagem_erro.visibility = View.INVISIBLE
+        pb_aguarde.visibility = View.VISIBLE
+    }
+
+    fun  exercicioJson(){
+        var dadosJson = """
+       {
+            "temperatura":{
+            "minima": 11.34,
+            "maxima": 19.01
+       },
+            "clima":{
+            "id": 801,
+            "condicao":"Nuvens",
+            "descricao":"poucas nuvens"
+       },
+            "pressao":1023.51,
+            "umidade":87
+       }
+       """
+
+        val objetoPrevisao = JSONObject(dadosJson)
+        val clima = objetoPrevisao.getJSONObject("clima")
+        val condicao = clima.getString("condicao")
+        val pressao = objetoPrevisao.getDouble("pressao")
+
+        Log.d("exercicioJson","$condicao -> $pressao")
+    }
+
     inner class GithubBuscaTask : AsyncTask<URL, Void, String>() {
+
+        override fun onPreExecute() {
+            exibirProgessBar()
+        }
 
         override fun doInBackground(vararg params: URL?): String? {
             try {
@@ -62,7 +114,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun onPostExecute(result: String?) {
-            tv_github_resultado.text = result
+            if (result != null) {
+                tv_github_resultado.text = result
+                exibirResultado()
+            }else{
+             exibirMensagemErro()
+            }
         }
     }
 

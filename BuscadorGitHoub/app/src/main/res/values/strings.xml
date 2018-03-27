@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Buscador GitHoub</string>
     <string name="buscar">Buscar</string>
+    <string name="mensagem_erro">Não foi possivel obter o resultado, tente novamente!</string>
 </resources>
