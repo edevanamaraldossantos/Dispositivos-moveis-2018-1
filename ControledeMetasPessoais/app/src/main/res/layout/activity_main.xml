@@ -6,33 +6,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="2dp"
+    android:paddingRight="2dp"
+    android:paddingTop="5dp"
     tools:context=".MainActivity"
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/edi_data"
-        android:layout_width="wrap_content"
+        android:id="@+id/edit_data"
+        android:layout_width="172dp"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
-        android:padding="12sp"
         android:ems="10"
-        android:inputType="date" />
+        android:inputType="date"
+        android:padding="11sp"
+        android:textSize="25sp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
-        android:padding="12sp"
+        android:textSize="25sp"
+        android:padding="11sp"
         android:hint="Titulo"
         android:id="@+id/edit_titulo"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
-        android:padding="12sp"
+        android:textSize="25sp"
+        android:padding="11sp"
         android:hint="Descricação"
         android:id="@+id/edit_Descricao"/>
 
+    <ListView
+        android:id="@+id/lv_metas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:paddingTop="5dp"
+
+        android:textSize="40sp"
+        android:padding="11sp">
+    </ListView>
+
+    <!--<ScrollView
+        android:paddingTop="20sp"
+        android:padding="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ListView
+            android:id="@+id/lv_metas"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="50sp"
+            android:text=""/>
+    </ScrollView>-->
 
 </LinearLayout>

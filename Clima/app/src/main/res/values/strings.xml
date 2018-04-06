@@ -1,4 +1,5 @@
-<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
+<resources xmlns:xliff="http:
+//schemas.android.com/apk/res-auto">
 <string name="app_name">Clima</string>
 
 <string name="hoje">Hoje</string>
