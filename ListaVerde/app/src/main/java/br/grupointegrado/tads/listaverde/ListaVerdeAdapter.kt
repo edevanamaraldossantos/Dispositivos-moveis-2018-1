@@ -23,8 +23,8 @@ class ListaVerdeAdapter : RecyclerView.Adapter<ListaVerdeAdapter.NumeroViewHolde
         return  numeroViewHolder
     }
 
-    override fun getItemCount(): Int {
-        TODO("ainda não implementado")
+    override fun getItemCount(): Int{
+            return lista.size
     }
 
     override fun onBindViewHolder(holder: NumeroViewHolder, position: Int) {
