@@ -2,20 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/acao_visualizar"
-        android:title="@string/acao_visualizar"
-        app:showAsAction="ifRoom"/>
-
-    <item android:id="@+id/acao_inserir"
-        android:title="@string/acao_inserir"
-        app:showAsAction="collapseActionView" />
-
     <item android:id="@+id/acao_editar"
         android:title="@string/acao_editar"
-        app:showAsAction="collapseActionView" />
+        app:showAsAction="collapseActionView"/>
 
     <item android:id="@+id/acao_excluir"
         android:title="@string/acao_excluir"
+        app:showAsAction="collapseActionView"/>
+
+    <item android:id="@+id/acao_finalizar"
+        android:title="@string/acao_finalizar"
         app:showAsAction="collapseActionView"/>
 
 </menu>

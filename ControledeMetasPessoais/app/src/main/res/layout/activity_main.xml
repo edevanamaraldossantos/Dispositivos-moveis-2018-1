@@ -22,32 +22,25 @@
         android:textSize="25sp" />
 
     <EditText
+        android:id="@+id/edit_titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="25sp"
         android:padding="11sp"
-        android:hint="Titulo"
-        android:id="@+id/edit_titulo"/>
+        android:hint="Titulo" />
 
     <EditText
+        android:hint="Descricação"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="25sp"
         android:padding="11sp"
-        android:hint="Descricação"
-        android:id="@+id/edit_Descricao"/>
+        android:id="@+id/edit_descricao"/>
 
     <ListView
-        android:id="@+id/lv_metas"
+        android:id="@+id/lv_list_item"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-        android:paddingLeft="2dp"
-        android:paddingRight="2dp"
-        android:paddingTop="5dp"
-
-        android:textSize="40sp"
-        android:padding="11sp">
+        android:layout_height="match_parent">
     </ListView>
 
     <!--<ScrollView
@@ -56,13 +49,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <ListView
-            android:id="@+id/lv_metas"
-            android:background="@color/colorPrimary"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="50sp"
-            android:text=""/>
+    <TextView
+        android:id="@+id/tv_metas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:paddingTop="5dp"
+        android:textSize="12sp"
+        android:padding="11sp">
+    </TextView>
+
     </ScrollView>-->
 
 </LinearLayout>
