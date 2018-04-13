@@ -12,14 +12,15 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
+
     <EditText
         android:id="@+id/edit_data"
         android:layout_width="172dp"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:textSize="25sp"
+        android:ems="11"
         android:inputType="date"
-        android:padding="11sp"
-        android:textSize="25sp" />
+        android:hint="Data"/>
 
     <EditText
         android:id="@+id/edit_titulo"
@@ -61,5 +62,4 @@
     </TextView>
 
     </ScrollView>-->
-
 </LinearLayout>
